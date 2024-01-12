@@ -1,0 +1,10 @@
+[Unit]
+Description=Chomp-Bot service for Pi-Hole & Scroll-pHAT-HD
+After=multi-user.target
+
+[Service]
+Type=idle
+ExecStart=/usr/bin/python3 /home/pi/chompbot/pihole-robot-chomp.py
+
+[Install]
+WantedBy=multi-user.target
