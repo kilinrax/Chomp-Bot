@@ -1,10 +1,15 @@
 [Unit]
 Description=Chomp-Bot service for Pi-Hole & Scroll-pHAT-HD
 After=multi-user.target
+StartLimitIntervalSec=30
+StartLimitBurst=2
 
 [Service]
 Type=idle
 ExecStart=/usr/bin/python3 /home/pi/chompbot/pihole-robot-chomp.py
+Restart=always
+RestartSec=5s
+RuntimeMaxSec=8h
 
 [Install]
 WantedBy=multi-user.target
